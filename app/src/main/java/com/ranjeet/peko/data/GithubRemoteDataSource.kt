@@ -27,6 +27,7 @@ class GithubRemoteDataSource(private var githubApiService: GitHubApiService) : R
     override suspend fun fetchUser(username: String): Flow<Result<User>> = flow {
         try {
             val user = githubApiService.fetchUser(username)
+            Log.e("TAG", "fetchUserList: "+user)
             emit(Result.Success(user))
         } catch (e: HttpException) {
             emit(Result.Error(e))

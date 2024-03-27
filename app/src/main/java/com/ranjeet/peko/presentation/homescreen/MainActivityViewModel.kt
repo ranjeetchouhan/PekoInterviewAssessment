@@ -70,6 +70,7 @@ class MainActivityViewModel @Inject constructor(
                             is HttpException -> {
                                 when (exception.code()) {
                                     403 -> "API limit is exhausted. Try again after 60 minutes."
+                                    404 -> "User Not Found"
                                     else -> exception.message ?: "An error occurred"
                                 }
                             }

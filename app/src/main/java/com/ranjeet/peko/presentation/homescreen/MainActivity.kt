@@ -25,6 +25,13 @@ import com.ranjeet.peko.utils.visible
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.debounce
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.filter
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
 
@@ -38,7 +45,7 @@ class MainActivity : AppCompatActivity() {
     var userList = arrayListOf<User>()
 
     private var errorMessageJob: Job? = null
-
+    val newTextFlow: MutableStateFlow<String> = MutableStateFlow("")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -66,14 +73,25 @@ class MainActivity : AppCompatActivity() {
 
             override fun onQueryTextChange(newText: String): Boolean {
                 if (!newText.equals("")) {
-                    fetchUser(newText)
+                    newTextFlow.value = newText
                     return true
                 }
                 return false
             }
         })
+
+        newTextAsFlow().map { text ->
+            // Perform actions with the new text
+            fetchUser(text)
+        }.launchIn(lifecycleScope)
     }
 
+    fun newTextAsFlow(): Flow<String> {
+        return newTextFlow
+            .debounce(300)
+            .filter { it.isNotBlank() } // Ensure there's actual text to search for
+            .distinctUntilChanged() // Ensure only distinct, different values trigger API calls
+    }
     private fun populateUserList() {
         userListAdapter = UserListAdapter(userList) {
             goToProfileActivity(it)
@@ -117,6 +135,8 @@ class MainActivity : AppCompatActivity() {
         lifecycleScope.launch {
             viewModel.user.collect { user ->
                 user.let {
+                    binding.rvUserList.visible()
+                    binding.animationView.gone()
                     this@MainActivity.userList.clear()
                     if (user != null) {
                         this@MainActivity.userList.add(user)
