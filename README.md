@@ -3,6 +3,7 @@
 Android application that uses GitHub API to fetch and display user profiles and repositories. Users should be able to search for GitHub users by username and view their profiles along with a list of repositories.
 
 **Note:** GitHub API has a limited number of API calls every hour. If exhausted then try with VPN or wait for sometimes (Probably 60 minutes).
+**Note:** Find the APK file in the [apk folder](apk/).
 
 ### MainActivity
 
@@ -33,4 +34,4 @@ User Profile can be viewed in this screen with bio, username, repositories, foll
 
 ## Credits
 
-This app was developed as part of the Peko Interview Assessment (https://peko.one/).
+This app was developed as part of the Peko Interview Assessment - https://peko.one/
