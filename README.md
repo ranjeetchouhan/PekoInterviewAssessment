@@ -33,4 +33,4 @@ User Profile can be viewed in this screen with bio, username, repositories, foll
 
 ## Credits
 
-This app was developed as part of the Peko Interview Assessment.
+This app was developed as part of the Peko Interview Assessment (https://peko.one/).
