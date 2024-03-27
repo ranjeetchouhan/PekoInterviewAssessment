@@ -4,10 +4,7 @@ Android application that uses GitHub API to fetch and display user profiles and 
 
 **Note:** GitHub API has a limited number of API calls every hour. If exhausted then try with VPN or wait for sometimes (Probably 60 minutes).
 
-## Screenshots
-
 ### MainActivity
-![MainActivity](screenshots/1.jpeg)
 
 By default, we are fetching a user list from the GitHub API. Endpoint "/users".
 - Search functionality is available in this screen.
@@ -15,11 +12,16 @@ By default, we are fetching a user list from the GitHub API. Endpoint "/users".
 - Tap on a result to move to the Profile Screen.
 
 ### UserProfileActivity
-![UserProfileActivity](screenshots/2.jpeg)
 
 User Profile can be viewed in this screen with bio, username, repositories, followers, following, city (if available).
 - Repository public link is clickable, opening in Google Chrome.
 - City Marker is clickable, opening in Google Maps.
+
+## Screenshots
+![MainActivity](screenshots/1.png)
+![MainActivity](screenshots/2.png)
+![UserProfileActivity](screenshots/3.png)
+![UserProfileActivity](screenshots/4.png)
 
 ## How to Use
 
