@@ -18,10 +18,10 @@ User Profile can be viewed in this screen with bio, username, repositories, foll
 - City Marker is clickable, opening in Google Maps.
 
 ## Screenshots
-![MainActivity](screenshots/1.png)
-![MainActivity](screenshots/2.png)
-![UserProfileActivity](screenshots/3.png)
-![UserProfileActivity](screenshots/4.png)
+<img src="screenshots/1.png" alt="MainActivity" width="400">
+<img src="screenshots/2.png" alt="MainActivity" width="400">
+<img src="screenshots/3.png" alt="UserProfileActivity" width="400">
+<img src="screenshots/4.png" alt="UserProfileActivity" width="400">
 
 ## How to Use
 
