@@ -6,6 +6,8 @@ Android application that uses GitHub API to fetch and display user profiles and 
 
 **Note:** Find the APK file in the [apk folder](apk/).
 
+**Note:** Recommend to use latest version of Android Studio.
+
 ### MainActivity
 
 By default, we are fetching a user list from the GitHub API. Endpoint "/users".
