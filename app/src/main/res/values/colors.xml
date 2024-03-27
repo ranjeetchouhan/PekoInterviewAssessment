@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="accent_color">#0492FF</color>
+    <color name="card_bg">#756F6F</color> <!-- Replace #FF4081 with your desired color -->
+</resources>

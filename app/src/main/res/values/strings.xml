@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Peko - GithubAPI</string>
+    <string name="label_loading_list">We\'re fetching user list in a while !</string>
+    <string name="label_loading_repo_list">We\'re fetching repository list in a while !</string>
+
+    <string name="username_placeholder">\@%1$s</string>
+    <string name="bio_placeholder">Bio : %s</string>
+    <string name="followers_placeholder">Followers : %s</string>
+    <string name="repositories_placeholder">Repositories : %1$s</string>
+    <string name="following_placeholder">Following : %s</string>
+    <string name="joined_on_placeholder">Joined on : %s</string>
+</resources>
